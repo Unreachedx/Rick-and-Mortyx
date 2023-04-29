@@ -5,6 +5,7 @@ import Footer from './components/Footer/Footer'
 import HomePage from './pages/HomePage/Homepage'
 import Episodes from './pages/Episodes/Episodes';
 import About from './pages/About/About';
+import CharacterDetails from './pages/CharacterDetails/CharacterDetails'
 
 
 
@@ -19,6 +20,7 @@ function App() {
         <Route path='/' element={<HomePage />} />
         <Route path='/about' element={<About />} />
         <Route path='/episodes' element={<Episodes />} />
+        <Route path='/details/:characterId' element={<CharacterDetails />} />
       </Routes>
 
       
