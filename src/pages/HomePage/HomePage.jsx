@@ -1,11 +1,17 @@
-import React,{useEffect, useState} from 'react'
+import React,{useEffect, useState, useContext} from 'react'
 import './HomePage.css'
 import axios from 'axios'
 import CharacterCard from '../../components/CharacterCard/CharacterCard'
 import Search from '../../components/Search/Search'
+import { ThemeContext } from '../../contexts/ThemeContext'
 
 
 function HomePage() {
+
+
+      //change to use gloabl state
+  //NOTE {} not []
+  const {darkMode, setDarkMode} = useContext(ThemeContext)
 
 
     //create state to store chracters
@@ -30,7 +36,7 @@ function HomePage() {
     )
 
   return (
-    <div className='home-container'>
+    <div className={darkMode?"home-container home-dark":"home-container"}>
         <Search  setCharacters={setCharacters} />
         <h1>Main Characters</h1>
         <div className="characters-container">

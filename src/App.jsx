@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage/Homepage'
 import Episodes from './pages/Episodes/Episodes';
 import About from './pages/About/About';
 import CharacterDetails from './pages/CharacterDetails/CharacterDetails'
+import ThemeContextProvider from './contexts/ThemeContext'
 
 
 
@@ -15,16 +16,16 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header />
-      <Routes>
+      <ThemeContextProvider>
+       <Header />
+        <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/about' element={<About />} />
         <Route path='/episodes' element={<Episodes />} />
         <Route path='/details/:characterId' element={<CharacterDetails />} />
-      </Routes>
-
-      
-      <Footer />
+        </Routes>
+       <Footer />
+      </ThemeContextProvider>
     </BrowserRouter>
   )
 }
