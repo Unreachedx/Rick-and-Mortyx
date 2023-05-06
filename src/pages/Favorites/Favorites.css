@@ -1,0 +1,8 @@
+.favorites-container h1{
+    text-align: center;
+}
+
+.favorite-characters{
+    display: flex;
+    flex-wrap: wrap;
+}

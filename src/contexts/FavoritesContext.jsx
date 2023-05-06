@@ -8,26 +8,20 @@ export default function FavoritesContextProvider(props){
     //create global state
     const [favorites, setFavorites] = useState([])
 
-    /* useEffect(
+    useEffect(
         ()=>{
             console.log('context loaded')
             //get value from local storage
-            const storedDarkMode = localStorage.getItem('darkMode')
+            const storedFavs = localStorage.getItem('favoritsList')
             //console.log(typeof(storedDarkMode))
-            if (storedDarkMode) {
+            if (storedFavs) {
                 //use this to initalize State
-                setDarkMode(JSON.parse(storedDarkMode))
+                setFavorites(JSON.parse(storedFavs))
             }
+            //otherwise use its default
+
         }, [] //runs once when context loads
     )
-
-    useEffect(
-        ()=>{
-            console.log('darkMode now ', darkMode)
-            //save value anytime it changes
-            localStorage.setItem('darkMode', JSON.stringify(darkMode))
-        }, [darkMode] //runs anytime darkMode changes
-    ) */
 
         const addCharacter = (charToAdd) =>{
             console.log('add' , charToAdd)
@@ -35,7 +29,8 @@ export default function FavoritesContextProvider(props){
             //console.log(newFavorites)
             //update state
             setFavorites(newFavorites)
-
+            //update local storage
+             localStorage.setItem('favoritesList', JSON.stringify(newFavorites))
         }
 
         const removeCharacter = (charId) =>{
@@ -44,6 +39,8 @@ export default function FavoritesContextProvider(props){
             let newFavorites = favorites.filter(item=>item.id !== charId)
             //update state
             setFavorites(newFavorites)
+            //update local storage
+            localStorage.setItem('favoritesList', JSON.stringify(newFavorites))
         }
 
     return (

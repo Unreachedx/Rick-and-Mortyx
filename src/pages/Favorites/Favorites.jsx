@@ -9,11 +9,13 @@ function Favorites() {
   const {favorites} = useContext(FavoritesContext)
 
   return (
-    <div>
+    <div className='favorites-container'><h1>My Favorite Characters</h1>
+    <div className='favorite-characters'>
       {
         favorites.map(item=><CharacterCard key={item.id} character={item} />)
         /* favorites.map(item=><p>{item.name}</p>) */
       }
+      </div>
     </div>
   )
 }
