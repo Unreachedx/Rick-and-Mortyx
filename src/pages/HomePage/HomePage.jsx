@@ -1,4 +1,4 @@
-import React,{useEffect, useState, useContext} from 'react'
+import {useEffect, useState, useContext} from 'react'
 import './HomePage.css'
 import axios from 'axios'
 import CharacterCard from '../../components/CharacterCard/CharacterCard'

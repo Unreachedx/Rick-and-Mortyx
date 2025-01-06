@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import './Favorites.css'
 import { FavoritesContext } from '../../contexts/FavoritesContext'
 import CharacterCard from '../../components/CharacterCard/CharacterCard'
